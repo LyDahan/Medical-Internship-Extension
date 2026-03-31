@@ -13,7 +13,7 @@ function scrapeRows() {
   const rows = document.querySelectorAll('tr.rgRow, tr.rgAltRow');
   return Array.from(rows).map(row => {
     const cells = row.querySelectorAll('td');
-    const btn = row.querySelector('input[type="submit"]');
+    const btn = row.querySelector('input[type="submit"], input[type="button"]');
     return {
       hospital:   cells[0]?.innerText.trim() ?? '',
       specialty:  cells[1]?.innerText.trim() ?? '',
